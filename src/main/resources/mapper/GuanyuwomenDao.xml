@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.dao.GuanyuwomenDao">
+
+	<!-- 可根据自己的需求，是否要使用 -->
+    <resultMap type="com.entity.GuanyuwomenEntity" id="guanyuwomenMap">
+        <result property="yiyuanmingcheng" column="yiyuanmingcheng"/>
+        <result property="yiyuandizhi" column="yiyuandizhi"/>
+        <result property="yiyuanjianjie" column="yiyuanjianjie"/>
+        <result property="keshijieshao" column="keshijieshao"/>
+        <result property="lianxidianhua" column="lianxidianhua"/>
+        <result property="yiyuanyouxiang" column="yiyuanyouxiang"/>
+        <result property="xiangqing" column="xiangqing"/>
+        <result property="yiyuantupian" column="yiyuantupian"/>
+    </resultMap>
+
+	<select id="selectListVO"
+		resultType="com.entity.vo.GuanyuwomenVO" >
+		SELECT * FROM guanyuwomen  guanyuwomen         
+        <where> 1=1 ${ew.sqlSegment}</where>
+	</select>
+	
+	<select id="selectVO"
+		resultType="com.entity.vo.GuanyuwomenVO" >
+		SELECT  guanyuwomen.* FROM guanyuwomen  guanyuwomen 	
+ 		<where> 1=1 ${ew.sqlSegment}</where>
+	</select>
+
+    <select id="selectListView"
+		resultType="com.entity.view.GuanyuwomenView" >
+
+		SELECT  guanyuwomen.* FROM guanyuwomen  guanyuwomen 	        
+        <where> 1=1 ${ew.sqlSegment}</where>
+	</select>
+	
+	<select id="selectView"
+		resultType="com.entity.view.GuanyuwomenView" >
+		SELECT * FROM guanyuwomen  guanyuwomen <where> 1=1 ${ew.sqlSegment}</where>
+	</select>
+	
+</mapper>
